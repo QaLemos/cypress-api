@@ -21,8 +21,17 @@
 Para mais informações sobre o Cypress, consulte a documentação oficial em: https://www.cypress.io/</p>
 
 <h1>Configuração do ambiente</h1>
-	<p>Para executar os testes deste repositório, você precisa ter o Node.js e o NPM (ou Yarn) instalados em seu computador.</p>
-	<p>Em seguida, siga as instruções abaixo:</p>
+	
+<p>Abra seu terminal ou prompt de comando e navegue até a pasta onde você deseja instalar o Serverest.</p>
+<p>Digite o seguinte comando para instalar o Serverest usando o npm (Node Package Manager):</p>
+
+	npm install -g serverest
+
+<p>O parâmetro "-g" indica que o pacote será instalado globalmente em sua máquina.</p>
+<p>Aguarde até que a instalação seja concluída.</p>
+
+<p>Para executar os testes deste repositório, você precisa ter o Node.js e o NPM (ou Yarn) instalados em seu computador.</p>
+<p>Em seguida, siga as instruções abaixo:</p>
 	<ol>
 		<li>Clone este repositório em seu computador:</li>
 		<pre><code>git clone https://github.com/QaLemos/cypress-api.git</code></pre>
@@ -40,7 +49,7 @@ Para mais informações sobre o Cypress, consulte a documentação oficial em: h
 		<pre><code>yarn cypress open</code></pre>
 		<li>Selecione o arquivo de teste desejado e aguarde a execução.</li>
 	</ol>
-	<h2>Estrutura do projeto</h2>
+<h2>Estrutura do projeto</h2>
 	<ul>
 		<li>/cypress/integration: contém os arquivos de teste escritos em Cypress.</li>
 		<li>/cypress/support: contém arquivos de suporte, como comandos personalizados e configurações.</li>
@@ -48,3 +57,5 @@ Para mais informações sobre o Cypress, consulte a documentação oficial em: h
 		<li>/cypress.json: arquivo de configuração do Cypress.</li>
 	</ul>
 	<h2>Contato</h2>
+	<p>Para entrar em contato comigo, você pode acessar o meu perfil no LinkedIn através do seguinte link:</p>
+<a href="https://www.linkedin.com/in/eduardo-lemos-84b82569/">https://www.linkedin.com/in/eduardo-lemos-84b82569/</a>
