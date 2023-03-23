@@ -1,0 +1,8 @@
+# arquivos e pastas que devem ser ignorados
+node_modules/
+build/
+dist/
+
+# arquivos que devem ser ignorados
+.DS_Store
+*.log

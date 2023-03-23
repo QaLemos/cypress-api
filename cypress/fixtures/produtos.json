@@ -1,0 +1,33 @@
+[
+    {
+        "nome": "Camiseta branca",
+        "preco": 29.99,
+        "descricao": "Camiseta básica branca de algodão",
+        "quantidade": 10
+      },
+      {
+        "nome": "Livro - O Pequeno Príncipe",
+        "preco": 19.99,
+        "descricao": "Livro infantil clássico escrito por Antoine de Saint-Exupéry",
+        "quantidade": 5
+      },
+      {
+        "nome": "Fone de ouvido bluetooth",
+        "preco": 99.90,
+        "descricao": "Fone de ouvido bluetooth com microfone e cancelamento de ruído",
+        "quantidade": 20
+      },
+      {
+        "nome": "Câmera fotográfica",
+        "preco": 599.00,
+        "descricao": "Câmera fotográfica com lente intercambiável e sensor APS-C",
+        "quantidade": 2
+      },
+      {
+        "nome": "Mouse gamer",
+        "preco": 199.90,
+        "descricao": "Mouse gamer com sensor óptico de alta precisão e iluminação RGB",
+        "quantidade": 8
+      }
+                          
+]
