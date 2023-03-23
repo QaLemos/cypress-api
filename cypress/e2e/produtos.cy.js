@@ -39,12 +39,69 @@ describe('Funcionalidade de produtos', () => {
 
     });
 
-    it.only('Deve impedir o cadastro de produtos repetidos', () => {
-        cy.cadastrarProduto(token,'Mouse Gamer', 199, 'top de linha da razer, confia', 8)
+    it('Deve impedir o cadastro de produtos repetidos', () => {
+        //Este teste irá falhar na primeira tentativa, pois o produto será novo ao iniciar o serverest
+        cy.cadastrarProduto(token, 'Mouse Gamer', 199, 'top de linha da razer, confia', 8)
 
-        .then((response) => {
-            expect(response.status).to.equal(400)
-            expect(response.body.message).to.equal('Já existe produto com esse nome');
+            .then((response) => {
+                expect(response.status).to.equal(400)
+                expect(response.body.message).to.equal('Já existe produto com esse nome');
+            })
+    })
+
+    it('Deve editar um produto ja cadastrado', () => {
+        cy.request('produtos').then(response => {
+            let id = response.body.produtos[0]._id
+            cy.request({
+                method: 'PUT',
+                url: `produtos/${id}`,
+                headers: { authorization: token },
+                body:{
+                    "nome": "Logitech MV Vertical",
+                    "preco": 320,
+                    "descricao": "Mouse",
+                    "quantidade": 382
+                  }
+            }).then(response => {
+                expect(response.body.message).to.equal('Registro alterado com sucesso')
+            })
         })
+
+    });
+
+    it.only('Deve editar produto previamente cadastrado', () => {
+        let produto = `produto novo teste ${Math.floor(Math.random() * 100000)}` 
+        cy.cadastrarProduto(token, produto, 199, 'top de linha da razer, confia', 8)
+        .then(response => {
+            let id = response.body._id
+            cy.request({
+                method: 'PUT',
+                url: `produtos/${id}`,
+                headers: { authorization: token },
+                body:{
+                    "nome": produto,
+                    "preco": 320,
+                    "descricao": "Mouse",
+                    "quantidade": 382
+                  }
+            }).then(response => {
+                expect(response.body.message).to.equal('Registro alterado com sucesso')
+            })
+        })
+    });
+
+    it.only('Deve deletar um produto ja cadastrado', () => {
+        let produto = `produto novo teste ${Math.floor(Math.random() * 100000)}` 
+        cy.cadastrarProduto(token, produto, 199, 'top de linha da razer, confia', 8)
+        let id = response.body._id
+        cy.request({
+            method: 'DELETE',
+            url: `produtos/${id}`,
+            headers: { authorization: token },
+        }).then(response => {
+            expect(response.body.message).to.equal('Registro excluído com sucesso')
+            expect(response.status).to.equal(200)
+        })
+
     })
 })
